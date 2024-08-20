@@ -1,0 +1,45 @@
+
+/* Color de fondo negro y letra*/
+
+#info {
+
+    background-color: black;
+    color: rgb(232, 226, 226);
+    text-align: center;
+    padding: 20px;
+} 
+
+/*Colocar imagenes en una tablacentrada*/
+
+#info .contenedor {
+  display:flex;  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*Estilo circular  a las imagenes */
+.info-imagen img
+{
+width: 180px;
+height: 180px;
+box-shadow: 10px 5px  5px 
+white; /*Añade efecto de sombra al rededor del elemento*/
+
+/*Redondear las esquinas del borde de las imagenes */
+border-radius: 50%;
+border: 7px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

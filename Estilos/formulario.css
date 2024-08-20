@@ -1,0 +1,69 @@
+
+/*css para el contacto*/
+.formulario{
+background-color: dimgray;
+width: min(60rem, 100%);
+margin: 0 auto;
+padding: 2rem;
+border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom:  2rem;
+    color: yellow;
+
+}
+
+.boton {
+    background-color: darkcyan;
+    color: aliceblue;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+
+color: aliceblue;
+font-weight: bold;
+margin-bottom: .5rem;
+display: block;
+}
+
+.compo textarea {
+    height: 20rem;
+
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+
+
+
+
+
+
+

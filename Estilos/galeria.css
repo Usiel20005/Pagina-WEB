@@ -1,0 +1,80 @@
+img{
+    display: block;
+    width: 100%;
+    max-width: 199%;
+}
+
+.contenedor-flexible{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galeria__img{
+    object-fit: cover;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.column--50-25{
+    width: 24.5%;
+}
+
+.galeria__img:hover{
+    transform: scale(1.05);
+}
+
+.galeria__img--grande{
+    height:400px ;
+}
+
+.galeria__img--chica{
+    height: 200px;
+}
+
+.modal{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000ee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+/*centrar la imagen seleccionada*/
+.modal__contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*ancho de la imagen*/
+.modal_img{
+    width: 50%;
+}
+
+/*estilo del boton*/
+.modal_boton{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    color: #ffff;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background: red;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 50%;
+    font-family: monospace;
+}
+
+/*funcion js que permite abrir la imagen*/
+.modal--open{
+    display: block;
+}
