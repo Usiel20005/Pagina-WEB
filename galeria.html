@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>Mi Página</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Mi Página</title>
     <link rel="stylesheet" href="Estilos/Principal-Diceños.css">
     <link rel="stylesheet" href="Estilos/Menu.css">
     <link rel="stylesheet" href="Estilos/fontello.css">
@@ -11,6 +13,41 @@
     <link rel="stylesheet" href="Estilos/info.css">
     <link rel="stylesheet" href="Estilos/footer.css">
     <link rel="stylesheet" href="Estilos/galeria.css">
+    <style>
+        /* Estilos para la imagen grande */
+        .imagen-grande {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .imagen-grande img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        .imagen-grande .texto {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,50 +58,45 @@
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">
                 <a href="index.html">Inicio</a>
-                <a href="galeria.html">Galeria</a>
-                <a href="contacto.html">Contactanos</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contáctanos</a>
             </nav>
         </div>
     </header>
+
     <main>
         <section id="banner">
-            <img src="Imagenes/banner 001.jpg" width="800">
+            <img src="Imagenes/banner 001.jpg" alt="Banner IA" width="800">
             <div id="contenedor">
                 <h2>Inteligencia Artificial</h2>
                 <p>La ciencia ficción se está convirtiendo en realidad</p>
                 <a href="mas.html">Leer más</a>
             </div>
         </section>
-        <div class="modal" id="modal">
-            <div class="modal__contenido">
-                <img src="" class="modal_img" id="modal_img">
+
+        <section>
+            <h2>Estos son nuestros proyectos con IA</h2>
+            <div class="contenedor contenedor-flexible">
+                <div class="column column--50-25">
+                    <img src="Imagenes/inte1.webp" alt="Proyecto IA 1" class="galeria__img galeria__img--grande" data-texto="Descripción del Proyecto IA 1">
+                    <img src="Imagenes/inte2.jpeg" alt="Proyecto IA 2" class="galeria__img galeria__img--chica" data-texto="Descripción del Proyecto IA 2">
+                </div>
+                <div class="column column--50-25">
+                    <img src="Imagenes/inte3.png" alt="Proyecto IA 3" class="galeria__img galeria__img--chica" data-texto="Descripción del Proyecto IA 3">
+                    <img src="Imagenes/inte4.webp" alt="Proyecto IA 4" class="galeria__img galeria__img--grande" data-texto="Descripción del Proyecto IA 4">
+                </div>
+                <div class="column column--50-25">
+                    <img src="Imagenes/inte5.webp" alt="Proyecto IA 5" class="galeria__img galeria__img--grande" data-texto="Descripción del Proyecto IA 5">
+                    <img src="Imagenes/inte6.jpg" alt="Proyecto IA 6" class="galeria__img galeria__img--chica" data-texto="Descripción del Proyecto IA 6">
+                </div>
+                <div class="column column--50-25">
+                    <img src="Imagenes/inte7.png" alt="Proyecto IA 7" class="galeria__img galeria__img--chica" data-texto="Descripción del Proyecto IA 7">
+                    <img src="Imagenes/inte8.webp" alt="Proyecto IA 8" class="galeria__img galeria__img--grande" data-texto="Descripción del Proyecto IA 8">
+                </div>
             </div>
-            <div class="modal_boton" id="modal_boton">
-                x
-            </div>
-        </div>
-        <div>
-            <h2>Estos son nuestros proyectos con ia</h2>
-        </div>
-        <div class="contenedor contenedor-flexible">
-            <div class="column column--50-25">
-                <img src="Imagenes/imgGrande1.jpg" class="galeria__img galeria__img--grande">
-                <img src="Imagenes/imgChica1.jpg" class="galeria__img galeria__img--chica">
-            </div>
-            <div class="column column--50-25">
-                <img src="Imagenes/imgChica2.jpg" class="galeria__img galeria__img--chica">
-                <img src="Imagenes/imgGrande2.jpg" class="galeria__img galeria__img--grande">
-            </div>
-            <div class="column column--50-25">
-                <img src="Imagenes/imgGrande3.jpg" class="galeria__img galeria__img--grande">
-                <img src="Imagenes/imgChica3.jpg" class="galeria__img galeria__img--chica">
-            </div>
-            <div class="column column--50-25">
-                <img src="Imagenes/imgChica4.jpg" class="galeria__img galeria__img--chica">
-                <img src="Imagenes/imgGrande4.jpg" class="galeria__img galeria__img--grande">
-            </div>
-        </div>
+        </section>
     </main>
+
     <footer>
         <div class="contenedor">
             <p class="pie">Copyright &copy; USIEL PH</p>
@@ -75,7 +107,31 @@
             </div>
         </div>
     </footer>
+
+    <div class="imagen-grande" id="imagen-grande">
+        <span class="cerrar" id="cerrar">&times;</span>
+        <img src="" alt="Imagen Grande">
+        <div class="texto"></div>
+    </div>
+
     <script type="text/javascript" src="js/menu.js"></script>
+    <script>
+        // JavaScript para manejar el zoom y mostrar el texto
+        document.querySelectorAll('.galeria__img').forEach(img => {
+            img.addEventListener('click', function () {
+                const imagenGrande = document.getElementById('imagen-grande');
+                const imgGrande = imagenGrande.querySelector('img');
+                const texto = imagenGrande.querySelector('.texto');
+                imgGrande.src = this.src;
+                texto.textContent = this.getAttribute('data-texto');
+                imagenGrande.style.display = 'flex';
+            });
+        });
+
+        document.getElementById('cerrar').addEventListener('click', function () {
+            document.getElementById('imagen-grande').style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
